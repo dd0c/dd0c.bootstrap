@@ -7,7 +7,7 @@
 
 - name: Change hostname to FQDN
   ansible.builtin.hostname:
-    name: {{ ansible_hostname }}.akuadora.net
+    name: {{ inventory_hostname }}.akuadora.net
     use: systemd
 
 #- name: 
