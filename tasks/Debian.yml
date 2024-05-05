@@ -1,0 +1,15 @@
+---
+
+- name: Ensure the standard locale exists
+  community.general.locale_gen:
+    name: {{ standard_locale }}
+    state: present
+
+- name: Change hostname to FQDN
+  ansible.builtin.hostname:
+    name: {{ ansible_hostname }}.akuadora.net
+    use: systemd
+
+#- name: 
+
+...
