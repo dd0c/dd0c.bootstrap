@@ -1,2 +1,1 @@
-# bootstrap_strato_vps
-Bootstrapping Strato VPS's
+# Bootstrap ansible, for user ansible
