@@ -7,13 +7,14 @@
 
 - name: Change hostname to FQDN
   ansible.builtin.hostname:
-    name: '"{{ inventory_hostname }}".akuadora.net'
+    name: "{{ inventory_hostname }}"
     use: systemd
   ignore_errors: true
 
 - name: Add the ansible user "ansible" with a bash shell, appending the group 'sudo' to the user's groups
   ansible.builtin.user:
     name: ansible
+    password: "{{ ansible_pwd | password_hash('sha512') }}"
     shell: /bin/bash
     groups: sudo
     append: yes
@@ -24,6 +25,6 @@
     regexp: '^ansible '
     line: "ansible    ALL = (ALL) NOPASSWD: ALL"
 
-- name: sshd_config
+#- name: sshd_config
 
 ...
