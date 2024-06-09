@@ -44,4 +44,15 @@
 #    src: /home/ansible/.ssh/id_rsa.pub
 #  register: '"{{ inventory_hostname }}".id_rsa.pub'
 
+- name: Setup multiple authorized keys
+  ansible.posix.authorized_key:
+    user: ansible
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public_keys/apollo-tycho
+    - public_keys/heimdall-ansible
+    - public_keys/freya-tycho
+    - public_keys/M2729-doctert
+
 ...
