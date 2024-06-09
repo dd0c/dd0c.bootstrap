@@ -1,5 +1,6 @@
 ---
 
 standard_locale: en_US.UTF-8
+ansible_pwd: 'change_me'
 
 ...
