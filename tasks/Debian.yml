@@ -54,5 +54,6 @@
     - public_keys/heimdall-ansible
     - public_keys/freya-tycho
     - public_keys/M2729-doctert
+    - public_keys/zeus-tycho
 
 ...
